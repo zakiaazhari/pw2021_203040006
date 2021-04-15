@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pw_tubes_203040006`
+-- Database: `prak4_pw_203040006`
 --
 
 -- --------------------------------------------------------
@@ -38,10 +38,10 @@ CREATE TABLE `data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data`
+-- Dumping data for table 'data'
 --
 
-INSERT INTO `data` (`No`, 'Nama Barang', 'Deskripsi', 'Warna', 'Harga', 'Stok Barang', 'Foto') VALUES
+INSERT INTO 'data' (`No`, 'Nama Barang', 'Deskripsi', 'Warna', 'Harga', 'Stok Barang', 'Foto') VALUES
 (1, 'Hoddie Champions', 'Jaket Sweater Pria-Jaket Original Distro-Hoodie Crewenk Champion Dark Blue Original Pull Tag Dan Lebel sweter Hoodie Kekinian Terlaris Dan Termurah Bahan Tebal', 'Dark Blue', '200.000', '100', '5.jpeg'), 
 (2, 'Hoddie Champions', 'Jaket Sweater Pria-Jaket Original Distro-Hoodie Crewenk Champion Putih Original Pull Tag Dan Lebel sweter Hoodie Kekinian Terlaris Dan Termurah Bahan Tebal', 'Putih', '250.000', '50', '6.jpeg'), 
 (3, 'Hoddie Champions', 'Jaket Sweater Pria-Jaket Original Distro-Hoodie Crewenk Champion Hitam Original Pull Tag Dan Lebel sweter Hoodie Kekinian Terlaris Dan Termurah Bahan Tebal', 'Hitam', '175.000', '150', '7.jpeg');
@@ -62,8 +62,8 @@ ALTER TABLE `data`
 --
 -- AUTO_INCREMENT for table `data`
 --
-ALTER TABLE `data`
-  MODIFY `No' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE 'data'
+  MODIFY 'No' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
