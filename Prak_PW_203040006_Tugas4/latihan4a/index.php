@@ -1,30 +1,43 @@
 <?php
-// koneksi ke database 
-$koneksi = mysqli_connect("localhost", "root", "");
-mysqli_select_db($koneksi, "prak4_pw_203040006");
-//untuk ambil query dari database 
-$result = mysqli_query($koneksi, "SELECT * FROM data");
+
+// Melakukan koneksi ke database
+$conn = mysqli_connect("localhost", "root", "");
+// Memilih Database
+mysqli_select_db($conn, "prak4_pw_203040006");
+// Melakukan Query dari database
+$result = mysqli_query($conn, "SELECT * FROM data");
+
 ?>
-<!DOCTYPE html>
+
+<!Doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoddie champions</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <style>
-        img {
-            max-width: 70px;
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- css style -->
+        <link rel="stylesheet" href="css/style2.css">
+        <title>Hoddie Champions</title>
+        <style>
+        .table {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
         }
-    </style>
-</head>
-
+        img {
+            max-width: 90px;
+        }
+        </style>
+    </head>
 <body>
-    <table class="table">
-        <thead>
-            <tr>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<div class="container">
+    <table cellpadding="10" cellspacing="0" border="1" class="highlight - centered brown lighten-4">
+        <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama Barang</th>
                 <th scope="col">Deskripsi</th>
@@ -39,18 +52,16 @@ $result = mysqli_query($koneksi, "SELECT * FROM data");
             while ($row = mysqli_fetch_assoc($result)) :
             ?>
                 <tr>
-                <th scope="row"><?=$i?></th>
-                <td><?= $row["Nama Barang"]?> </td>
-                <td><?= $row["Deskripsi"]?></td>
-                <td><?= $row["Warna"]?> </td>
-                <td><?= $row["Harga"]?> </td>
-                <td><?= $row["Stok Barang"]?> </td>
-                <td><img src="assets/<?= $row["Foto"]; ?>"></td>
-                </tr>
-            <?php
-                $i++;
-            endwhile;
-            ?>
+            <td><?= $i; ?></td>
+            <td><?= $row["Nama Barang"]; ?></td>
+            <td><?= $row["Deskripsi"]; ?></td>
+            <td><?= $row["Warna"]; ?></td>
+            <td><?= $row["Harga"]; ?></td>
+            <td><?= $row["Stok Barang"];?> </td>
+            <td><img src="assets/<?= $row["Foto"];?> "></td>
+        </tr>
+        <?php $i++ ?>
+        <?php endwhile; ?>
         </tbody>
     </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">

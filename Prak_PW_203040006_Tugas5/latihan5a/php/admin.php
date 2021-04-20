@@ -1,10 +1,8 @@
 <?php
+require 'functions.php';
 
-// Menghubungkan dengan file php lainya 
-require 'php/function.php';
-
-//melakukan query biasa ke table t_hoddie
 $t_hoddie = query("SELECT * FROM t_hoddie");
+
 ?>
 
 <head>
@@ -20,7 +18,7 @@ $t_hoddie = query("SELECT * FROM t_hoddie");
             text-align: center;
         }
         img {
-            max-width: 90px;
+            max-width: 150px;
         }
         </style>
     </head>
@@ -30,25 +28,29 @@ $t_hoddie = query("SELECT * FROM t_hoddie");
     <table cellpadding="10" cellspacing="0" border="1" class="highlight - centered brown lighten-4">
         <tr>
                 <th scope="col">No</th>
+                <th scope="col">Opsi</th>
                 <th scope="col">Nama Barang</th>
+                <th scope="col">Foto</th>
                 <th scope="col">Deskripsi</th>
                 <th scope="col">Warna</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Stok Barang</th>
-                <th scope="col">Foto</th>
             </tr>
         </thead>
         <tbody>
-        <?php $i = 1;
-            foreach ($t_hoddie as $hd) : ?>
-                <tr>
-                <td class="table-succes"><?= $i; ?></td>
-                <td class="table-primary"><?= $hd["nama_barang"]; ?></td> 
+        <?php $i = 1 ?>
+                <?php foreach ($t_hoddie as $hd) : ?>
+                <td><?=$i; ?></td>
+                <td>
+                <a href=""><button>Ubah</button></a>
+                    <a href=""><button>Hapus</button></a>
+                </td>
+                <td class="table-primary"><?= $hd["nama_barang"]; ?></td>
+                <td class="table-primary"><img src="../assets/<?= $hd['foto']; ?>"></td>  
                 <td><?= $hd["deskripsi"]; ?></td>
                 <td class="table-primary"><?= $hd["warna"]; ?></td>
                 <td class="table-primary"><?= $hd["harga"]; ?></td>
-                <td id="type"><span><?= $hd["stok_barang"]; ?></span></td>
-                <td><img src="assets/<?= $hd["foto"]; ?>"></td> 
+                 <td id="type"><span><?= $hd["stok_barang"]; ?></span></td>
         </tr>
         <?php $i++ ?>
         <?php endforeach; ?>

@@ -1,21 +1,19 @@
 <?php
-// Koneksi Database 
-function koneksi(){
-    $koneksi = mysqli_connect("localhost", "root","");
-    mysqli_select_db($koneksi, "prak4_pw_203040006");
+function koneksi()
+{
+    $conn = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($conn, "prak4_pw_203040006");
 
-    return $koneksi;
-
+    return $conn;
 }
 
-// fungsi query
-function query($sql){
-    $koneksi = koneksi();
-    $result = mysqli_query($koneksi, "$sql");
-
-    $rows=[];
-    while ($row = mysqli_fetch_assoc($result)){
-        $rows[]=$row;
+function query($sql) 
+{
+    $conn = koneksi();
+    $result = mysqli_query($conn, "$sql");
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
     }
     return $rows;
 
