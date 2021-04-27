@@ -7,7 +7,7 @@ function koneksi()
     return $conn;
 }
 
-function query($sql) 
+function query($sql)
 {
     $conn = koneksi();
     $result = mysqli_query($conn, "$sql");
@@ -17,4 +17,3 @@ function query($sql)
     }
     return $rows;
 }
-?>

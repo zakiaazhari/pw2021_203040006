@@ -1,61 +1,53 @@
 <?php
-
-// Menghubungkan dengan file php lainya 
-require 'php/function.php';
-
-//melakukan query biasa ke table t_hoddie
-$t_hoddie = query("SELECT * FROM t_hoddie");
+$conn = mysqli_connect("localhost", "root", "") or die("koneksi ke DB gagal");
+mysqli_select_db($conn, "prak4_pw_203040006") or die("Database salah!");
+$result = mysqli_query($conn, "SELECT * FROM t_hoddie");
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoddie Champions</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <style>
-        .table {
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-        }
-        img {
-            max-width: 90px;
-        }
-        </style>
-    </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    img {
+      height: 150px;
+      ;
+    }
+  </style>
+  <title>latihan4A</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
 <body>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<div class="container">
-    <table cellpadding="10" cellspacing="0" border="1" class="highlight - centered brown lighten-4">
-        <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Barang</th>
-                <th scope="col">Deskripsi</th>
-                <th scope="col">Warna</th>
-                <th scope="col">Harga</th>
-                <th scope="col">Stok Barang</th>
-                <th scope="col">Foto</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php $i = 1;
-            foreach ($t_hoddie as $hd) : ?>
-                <tr>
-                <td class="table-succes"><?= $i; ?></td>
-                <td class="table-primary"><?= $hd["nama_barang"]; ?></td> 
-                <td><?= $hd["deskripsi"]; ?></td>
-                <td class="table-primary"><?= $hd["warna"]; ?></td>
-                <td class="table-primary"><?= $hd["harga"]; ?></td>
-                <td id="type"><span><?= $hd["stok_barang"]; ?></span></td>
-                <td><img src="assets/<?= $hd["foto"]; ?>"></td> 
-        </tr>
-        <?php $i++ ?>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+
+  <h1>Hoddie Champions</h1>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+      <th>No</th>
+      <th>Nama Barang</th>
+      <th>Foto</th>
+      <th>Deskripsi</th>
+      <th>Warna</th>
+      <th>Harga</th>
+      <th>Stok Barang</th>
+    </tr>
+    <?php $i = 1; ?>
+    <?php while ($hd = mysqli_fetch_assoc($result)) : ?>
+      <tr>
+        <td><?= $i; ?></td>
+        <td><img src="assets/<?= $hd["foto"]; ?>"></td>
+        <td><?= $hd["nama_barang"]; ?></td>
+        <td><?= $hd["deskripsi"]; ?></td>
+        <td><?= $hd["warna"]; ?></td>
+        <td><?= $hd["harga"]; ?></td>
+        <td><?= $hd["stok_barang"]; ?></td>
+      </tr>
+      <?php $i++; ?>
+    <?php endwhile; ?>
+
+  </table>
 </body>
 
 </html>

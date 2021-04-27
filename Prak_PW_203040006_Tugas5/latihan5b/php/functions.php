@@ -7,7 +7,7 @@ function koneksi()
     return $conn;
 }
 
-function query($sql) 
+function query($sql)
 {
     $conn = koneksi();
     $result = mysqli_query($conn, "$sql");
@@ -22,19 +22,19 @@ function tambah($data)
 {
     $conn = koneksi();
 
+
     $nama_barang = htmlspecialchars($data['nama_barang']);
-    $foto = htmlspecialchars($data['foto']);
-    $deskripsi = htmlspecialchars($data['deskripsi']);
+    $deskripsi = htmlspecialchars($data['deskripsi$deskripsi']);
     $warna = htmlspecialchars($data['warna']);
     $harga = htmlspecialchars($data['harga']);
     $stok_barang = htmlspecialchars($data['stok_barang']);
+    $foto = htmlspecialchars($data['foto']);
 
-    $query = "INSERT INTO buku
+    $query = "INSERT INTO mahasiswa
                     VALUES
-                    ('', '$nama_barang', '$foto', '$deskripsi', '$warna', '$harga', '$stok_barang')";
+                    ('', '$foto', '$nama_barang', '$deskripsi', '$warna', '$harga', '$stok_barang')";
 
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
 }
-?>

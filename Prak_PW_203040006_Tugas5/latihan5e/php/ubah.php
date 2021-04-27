@@ -21,45 +21,47 @@ if (isset($_POST['ubah'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="../pw2021_203040006/latihan4b/css/style.css">
     <style>
-    section {
-        min-height: 420px;
-    }
+        section {
+            min-height: 420px;
+        }
 
-    h1 {
-        text-align: center;
-    }
+        h1 {
+            text-align: center;
+        }
 
-    span {
-        font-family: arial;
-        border: 1px solid black;
-        padding: 5px;
-        background-color: blue;
-        font-weight: bold;
-    }
+        span {
+            font-family: arial;
+            border: 1px solid black;
+            padding: 5px;
+            background-color: blue;
+            font-weight: bold;
+        }
     </style>
 
-<title>Hoddie Champions</title>
+    <title>Hoddie Champions</title>
 </head>
+
 <body>
     <div class="container">
 
-        <h3>Form Tambah Data Buku</h3>
+        <h3>Form Tambah Data Hoddie</h3>
 
         <form action="" method="POST">
             <ul>
                 <li>
-                    <label for="nama_barang">Nama Banang :</label><br>
+                    <label for="nama_barang">Nama Barang :</label><br>
                     <input type="text" name="nama_barang" Nama Banangama_barang" Nama Banangred><br><br>
                 </li>
                 <li>
                     <label for="foto">Foto :</label><br>
-                    <input type="file" name="foto" id="foto" ><br><br>
+                    <input type="file" name="foto" id="foto"><br><br>
                 </li>
                 <li>
                     <label for="deskripsi">Deskripsi :</label><br>
@@ -87,4 +89,5 @@ if (isset($_POST['ubah'])) {
     </div>
 
 </body>
+
 </html>

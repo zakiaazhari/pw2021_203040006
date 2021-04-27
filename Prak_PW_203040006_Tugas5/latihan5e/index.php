@@ -1,10 +1,11 @@
-<?php 
+<?php
 require 'php/functions.php';
 $t_hoddie = query("SELECT * FROM t_hoddie");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,28 +17,31 @@ $t_hoddie = query("SELECT * FROM t_hoddie");
             padding: 10px;
             text-align: center;
         }
+
         img {
             max-width: 150px;
         }
-        </style>
+    </style>
 
     <title>Hoddie Champions</title>
 </head>
+
 <body>
-    
+
     <div class="container">
         <div class="table-primary"></div>
-            <?php foreach ($t_hoddie as $hd) :?>
-                <p class="nama">
-                    <a href="php/detail.php?id=<?= $hd['id'] ?>">
-                        <?= $hd["nama_barang"]?>
-                    </a>
-                </p>
-            <?php endforeach; ?>
-        </div>
+        <?php foreach ($t_hoddie as $hd) : ?>
+            <p class="nama">
+                <a href="php/detail.php?id=<?= $hd['id'] ?>">
+                    <?= $hd["nama_barang"] ?>
+                </a>
+            </p>
+        <?php endforeach; ?>
+    </div>
     </div>
     <button class="tombol-admin"><a href="php/admin.php">Halaman Admin</a></button>
     </div>
     </div>
 </body>
+
 </html>

@@ -7,7 +7,7 @@ function koneksi()
     return $conn;
 }
 
-function query($sql) 
+function query($sql)
 {
     $conn = koneksi();
     $result = mysqli_query($conn, "$sql");
@@ -29,23 +29,25 @@ function tambah($data)
     $harga = htmlspecialchars($data['harga']);
     $stok_barang = htmlspecialchars($data['stok_barang']);
 
-    $query = "INSERT INTO novel
+    $query = "INSERT INTO buku
                     VALUES
                     ('', '$nama_barang', '$foto', '$deskripsi', '$warna', '$harga', '$stok_barang')";
 
     mysqli_query($conn, $query);
+
     return mysqli_affected_rows($conn);
 }
 
-function hapus($id) 
+function hapus($id)
 {
     $conn = koneksi();
 
-    mysqli_query($conn, "DELETE FROM novel WHERE id = $id");
+    mysqli_query($conn, "DELETE FROM t_hoddie WHERE id = $id");
 
     return mysqli_affected_rows($conn);
 }
-function ubah($data) {
+function ubah($data)
+{
     $conn = koneksi();
 
     $id = htmlspecialchars($data['id']);
@@ -56,7 +58,7 @@ function ubah($data) {
     $harga = htmlspecialchars($data['harga']);
     $stok_barang = htmlspecialchars($data['stok_barang']);
 
-    $query = "UPDATE novel 
+    $query = "UPDATE t_hoddie 
                     SET 
                     nama_barang='$nama_barang',
                     foto='$foto',
@@ -69,4 +71,3 @@ function ubah($data) {
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
-?>
