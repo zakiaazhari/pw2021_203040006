@@ -24,7 +24,7 @@ $t_hoddie = query("SELECT *FROM t_hoddie WHERE no = $id");
     <li>Deskripsi : <?= $t_hoddie['deskripsi']; ?></li>
     <li>Warna : <?= $t_hoddie['warna']; ?></li>
     <li>Harga : <?= $t_hoddie['harga']; ?></li>
-    <li><a href="ubah.php?id=<?= $t_hoddie['no']; ?>">ubah</a> | <a href="hapus.php?id=<?= $t_hoddie['no']; ?>" onclick="return confirm('apakah anda yakin?')">hapus</a></li> | <a href="index.php?id=<?= $t_hoddie['no']; ?>" onclick="return confirm('apakah anda yakin?')">Beli</a></li>
+    <li><a href="beli.php?id=">Beli</a> |
     <li><a href="index.php">Kembali ke daftar mahasiswa</a></li>
   </ul>
 </body>

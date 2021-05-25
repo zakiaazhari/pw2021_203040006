@@ -1,23 +1,46 @@
 .slider h3,
 .slider h5,
-.clients h3{
-	text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+.clients h3 {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.parallax-container{
-	height: 300px;
+.parallax-container {
+    height: 300px;
 }
 
 .parallax {
-	filter: grayscale(1);
-	opacity: 0.8 !important;
+    filter: grayscale(1);
+    opacity: 0.8 !important;
 }
 
-.client img{
-	max-width: 150px;
-	filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.8));
-}
-section, footer{
-	padding: 20px 0;
+.client img {
+    max-width: 150px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.8));
 }
 
+section,
+footer {
+    padding: 20px 0;
+}
+
+
+/* Services */
+
+#services {
+    font-family: 'Pacifico', cursive;
+    margin: -30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: -70px;
+    background-image: url(../img/hoddie/10.jpg);
+}
+
+
+/* About */
+
+#about {
+    margin: -30px 0 -20px 0;
+    padding: 30px 0 10px;
+    font-family: 'Pacifico', cursive;
+    background-image: url(../img/portfolio/background.jpg);
+}
